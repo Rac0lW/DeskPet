@@ -11,6 +11,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 shadow_size = 4
+shadow_offset = Vector2(2, 2)
 
 [resource]
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_ailii")

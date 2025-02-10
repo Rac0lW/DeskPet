@@ -18,7 +18,6 @@ func _input(event: InputEvent) -> void:
 				is_draging = false
 		
 
-
 func _process(delta: float) -> void:
 	if is_draging == false:
 		return

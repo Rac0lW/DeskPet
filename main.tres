@@ -1,7 +1,19 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://kwav5ecavs0r"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://kwav5ecavs0r"]
 
 [ext_resource type="StyleBox" uid="uid://d2x5lbrl48aik" path="res://blue_border_deepblue_bg.tres" id="1_8cl5a"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3u0y"]
+bg_color = Color(0.0434418, 0.0936388, 0.152344, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.173187, 0.769655, 0.886719, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [resource]
-Label/styles/normal = ExtResource("1_8cl5a")
+Label/styles/normal = SubResource("StyleBoxFlat_g3u0y")
 PanelContainer/styles/panel = ExtResource("1_8cl5a")

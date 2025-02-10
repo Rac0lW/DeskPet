@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnfcjel1wylsd"]
+[gd_scene load_steps=5 format=3 uid="uid://dnfcjel1wylsd"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1f0rb"]
 [ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://main.tres" id="1_5rrya"]
+[ext_resource type="Script" path="res://drag.gd" id="3_c67pp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3p5s"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -29,3 +32,30 @@ theme_override_constants/margin_bottom = 10
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
 theme = ExtResource("1_5rrya")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 6
+theme = ExtResource("1_5rrya")
+text = "Title"
+horizontal_alignment = 1
+script = ExtResource("3_c67pp")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_t3p5s")
+
+[node name="Drag" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 6
+text = "..."
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/Label" to="MarginContainer/PanelContainer/VBoxContainer/Label" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/PanelContainer/VBoxContainer/Label" to="MarginContainer/PanelContainer/VBoxContainer/Label" method="_on_mouse_exited"]

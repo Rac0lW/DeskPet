@@ -1,17 +1,7 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://kwav5ecavs0r"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ailii"]
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.165771, 0.383162, 0.757813, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-shadow_size = 4
-shadow_offset = Vector2(2, 2)
+[ext_resource type="StyleBox" uid="uid://d2x5lbrl48aik" path="res://blue_border_deepblue_bg.tres" id="1_8cl5a"]
 
 [resource]
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_ailii")
+Label/styles/normal = ExtResource("1_8cl5a")
+PanelContainer/styles/panel = ExtResource("1_8cl5a")

@@ -1,11 +1,19 @@
 extends Control
 
 @export var offset:int = 40
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var text_edit: TextEdit = $MarginContainer/PanelContainer/VBoxContainer/TextEdit
 
-# Called when the node enters the scene tree for the first time.
+var save_manager:SaveGame = SaveGame.new()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Save"):
+		_save_game()
+
 func _ready() -> void:
 	boot()
-
+	
+	_load_game()
 
 func boot():
 	var win_pos = DisplayServer.window_get_position()
@@ -17,3 +25,25 @@ func boot():
 	var right_pos:Vector2i = Vector2i(right_pos_x, right_pos_y)
 	
 	DisplayServer.window_set_position(right_pos)
+	
+	animation_player.play("Init")
+
+func _load_game() -> void:
+	save_manager.load_game()
+	text_edit.text = save_manager.text_save
+	
+func _save_game() -> void:
+	save_manager.text_save = text_edit.text
+	save_manager.save_game()
+
+
+func _on_text_edit_text_changed() -> void:
+	_save_game()
+
+
+func _on_save_button_pressed() -> void:
+	_save_game()
+
+
+func _on_load_button_pressed() -> void:
+	_load_game()

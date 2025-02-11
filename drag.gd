@@ -1,4 +1,4 @@
-extends Label
+extends HBoxContainer
 
 var is_entering:bool = false
 var is_draging:bool = false

@@ -29,8 +29,8 @@ func boot():
 	animation_player.play("Init")
 
 func _load_game() -> void:
-	save_manager.load_game()
-	text_edit.text = save_manager.text_save
+	var save = save_manager.load_game()
+	text_edit.text = save.text_save
 	
 func _save_game() -> void:
 	save_manager.text_save = text_edit.text

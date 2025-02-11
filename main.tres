@@ -1,6 +1,15 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://kwav5ecavs0r"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://kwav5ecavs0r"]
 
 [ext_resource type="StyleBox" uid="uid://d2x5lbrl48aik" path="res://blue_border_deepblue_bg.tres" id="1_8cl5a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngmim"]
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k12qy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3u0y"]
 bg_color = Color(0.0434418, 0.0936388, 0.152344, 1)
@@ -15,5 +24,7 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [resource]
+Button/styles/hover = SubResource("StyleBoxFlat_ngmim")
+Button/styles/normal = SubResource("StyleBoxFlat_k12qy")
 Label/styles/normal = SubResource("StyleBoxFlat_g3u0y")
 PanelContainer/styles/panel = ExtResource("1_8cl5a")

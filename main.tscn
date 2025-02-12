@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dnfcjel1wylsd"]
+[gd_scene load_steps=14 format=3 uid="uid://dnfcjel1wylsd"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1f0rb"]
 [ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://main.tres" id="1_5rrya"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c4bkt21jffme" path="res://file_open_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="5_245e7"]
 [ext_resource type="Script" path="res://quit_button.gd" id="5_lgp2o"]
 [ext_resource type="Texture2D" uid="uid://k3i1hdntgyaa" path="res://save_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="5_r24jn"]
+[ext_resource type="Script" path="res://text_edit.gd" id="10_l5qx4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upy4p"]
 
@@ -172,11 +173,13 @@ text = "Exit "
 icon = ExtResource("4_i4rkp")
 script = ExtResource("5_lgp2o")
 
-[node name="TextEdit" type="TextEdit" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/PanelContainer/VBoxContainer" node_paths=PackedStringArray("target_label")]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_5rrya")
 scroll_smooth = true
+script = ExtResource("10_l5qx4")
+target_label = NodePath("../HBoxContainer/Label")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -191,3 +194,4 @@ libraries = {
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/QuitButton" to="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/QuitButton" method="_on_pressed"]
 [connection signal="text_changed" from="MarginContainer/PanelContainer/VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="text_changed" from="MarginContainer/PanelContainer/VBoxContainer/TextEdit" to="MarginContainer/PanelContainer/VBoxContainer/TextEdit" method="_on_text_changed"]

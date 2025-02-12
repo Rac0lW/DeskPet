@@ -131,13 +131,26 @@ script = ExtResource("3_c67pp")
 layout_mode = 2
 tooltip_text = "Always on Top?"
 theme = ExtResource("1_5rrya")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 button_pressed = true
 text = " Pin"
 script = ExtResource("3_86pma")
 
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_upy4p")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("1_5rrya")
+text = "测试用例"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
 mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_upy4p")
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ymmw6tknayqa"]
 
 [ext_resource type="Script" path="res://NaviPanel/drag.gd" id="1_8c5ms"]
-[ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://main.tres" id="2_xloel"]
+[ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://Main/main.tres" id="2_xloel"]
 [ext_resource type="Script" path="res://NaviPanel/check_button.gd" id="3_dfpmy"]
 [ext_resource type="Texture2D" uid="uid://c4bkt21jffme" path="res://file_open_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="4_mim18"]
 [ext_resource type="Texture2D" uid="uid://k3i1hdntgyaa" path="res://save_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="5_fa1pr"]
@@ -66,6 +66,5 @@ script = ExtResource("7_j30ee")
 
 [connection signal="mouse_entered" from="HBoxContainer" to="HBoxContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="HBoxContainer" to="HBoxContainer" method="_on_mouse_exited"]
-[connection signal="button_down" from="HBoxContainer/CheckButton" to="HBoxContainer/CheckButton" method="_on_button_down"]
-[connection signal="button_up" from="HBoxContainer/CheckButton" to="HBoxContainer/CheckButton" method="_on_button_up"]
+[connection signal="toggled" from="HBoxContainer/CheckButton" to="HBoxContainer/CheckButton" method="_on_toggled"]
 [connection signal="pressed" from="HBoxContainer/QuitButton" to="HBoxContainer/QuitButton" method="_on_pressed"]

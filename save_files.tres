@@ -4,8 +4,10 @@
 
 [resource]
 script = ExtResource("1_orttd")
-text_save = "1. 拖拽自定义 
-2. Load与Save弹窗f
+text_save = "软件实现目标
+
+1. 拖拽自定义 checked
+2. Load与Save弹窗
 3. Hide动画
 4. 多窗口
 
@@ -14,10 +16,13 @@ text_save = "1. 拖拽自定义
 7. I-Beam明显化
 
 7. md特化
-8. 工具箱子系统
+8. 工具箱子系统(navi和button)
 
 
-9.系统界面自适应
-10.系统界面强制覆盖
+9.系统界面自适应(Rust调用API)
+10.系统界面强制覆盖(游戏游戏内运行)
 
-11. 纸面特性 checked"
+11. 纸面特性 checked
+12. 优化或去除右键菜单
+
+13. 标题应该显示为有内容行数的第一个"

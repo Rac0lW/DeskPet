@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_orttd")
-text_save = "1. 拖拽自定义
-2. Load与Save弹窗
+text_save = "1. 拖拽自定义 
+2. Load与Save弹窗f
 3. Hide动画
 4. 多窗口
 

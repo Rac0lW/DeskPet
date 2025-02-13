@@ -34,7 +34,7 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_upy4p")
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer" groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_xloel")

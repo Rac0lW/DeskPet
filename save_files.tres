@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_orttd")
 text_save = "1. 拖拽自定义
-2. Load与Save弹窗1123
-3. Hide动画asd11231
+2. Load与Save弹窗
+3. Hide动画
 4. 多窗口
 
 5. 字体显示Bug/ 与字体更新
@@ -20,5 +20,5 @@ text_save = "1. 拖拽自定义
 9.系统界面自适应
 10.系统界面强制覆盖
 
-11. 纸面特性
+11. 纸面特性 checked
 	"

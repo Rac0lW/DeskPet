@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dnfcjel1wylsd"]
+[gd_scene load_steps=18 format=3 uid="uid://dnfcjel1wylsd"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1f0rb"]
 [ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://main.tres" id="1_5rrya"]
@@ -8,9 +8,34 @@
 [ext_resource type="Texture2D" uid="uid://c4bkt21jffme" path="res://file_open_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="5_245e7"]
 [ext_resource type="Script" path="res://quit_button.gd" id="5_lgp2o"]
 [ext_resource type="Texture2D" uid="uid://k3i1hdntgyaa" path="res://save_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="5_r24jn"]
+[ext_resource type="Shader" path="res://sketch.gdshader" id="10_08gsg"]
 [ext_resource type="Script" path="res://text_edit.gd" id="10_l5qx4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upy4p"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r5wtb"]
+noise_type = 3
+fractal_type = 2
+fractal_lacunarity = 3.655
+fractal_gain = 2.77
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5qtxu"]
+seamless = true
+seamless_blend_skirt = 1.0
+noise = SubResource("FastNoiseLite_r5wtb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grgu1"]
+shader = ExtResource("10_08gsg")
+shader_parameter/u_bgColor = Color(1, 0.995422, 0.707031, 1)
+shader_parameter/u_bgColorFactor = 0.604
+shader_parameter/u_patternColor = Color(0, 0, 0, 1)
+shader_parameter/u_threshold1 = 0.75
+shader_parameter/u_threshold2 = 0.5
+shader_parameter/u_threshold3 = 0.25
+shader_parameter/u_threshold4 = 0.05
+shader_parameter/u_bgTiling = Vector2(1, 1)
+shader_parameter/u_patternTiling = Vector2(1, 1)
+shader_parameter/u_bgTexture = SubResource("NoiseTexture2D_5qtxu")
 
 [sub_resource type="Animation" id="Animation_2xow7"]
 resource_name = "Init"
@@ -181,7 +206,9 @@ scroll_smooth = true
 script = ExtResource("10_l5qx4")
 target_label = NodePath("../HBoxContainer/Label")
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/PanelContainer/VBoxContainer/TextEdit"]
+[node name="ColorRect" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer/TextEdit"]
+self_modulate = Color(1, 1, 1, 0.184314)
+material = SubResource("ShaderMaterial_grgu1")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -189,7 +216,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(1, 1, 1, 0)
+mouse_default_cursor_shape = 1
+theme = ExtResource("1_5rrya")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

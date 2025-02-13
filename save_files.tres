@@ -4,11 +4,21 @@
 
 [resource]
 script = ExtResource("1_orttd")
-text_save = "组织化
-请问
-超级pussy曼
+text_save = "1. 拖拽自定义
+2. Load与Save弹窗1123
+3. Hide动画asd11231
+4. 多窗口
+
+5. 字体显示Bug/ 与字体更新
+6. 样式自定义
+7. I-Beam明显化
+
+7. md特化
+8. 工具箱子系统
 
 
-阿松大
-啊是的请问
-"
+9.系统界面自适应
+10.系统界面强制覆盖
+
+11. 纸面特性
+	"

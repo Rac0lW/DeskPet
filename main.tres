@@ -24,6 +24,7 @@ CheckButton/styles/normal = ExtResource("1_g8dql")
 CheckButton/styles/pressed = ExtResource("1_g8dql")
 Label/colors/font_color = Color(0.230469, 0.230469, 0.230469, 1)
 Label/styles/normal = ExtResource("1_g8dql")
+Panel/styles/panel = null
 PanelContainer/styles/panel = ExtResource("1_8cl5a")
 TextEdit/colors/font_color = Color(0.230469, 0.230469, 0.230469, 1)
 TextEdit/styles/normal = SubResource("StyleBoxFlat_fn06y")

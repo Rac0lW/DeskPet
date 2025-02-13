@@ -1,17 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dnfcjel1wylsd"]
+[gd_scene load_steps=13 format=3 uid="uid://dnfcjel1wylsd"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1f0rb"]
 [ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://main.tres" id="1_5rrya"]
-[ext_resource type="Script" path="res://check_button.gd" id="3_86pma"]
-[ext_resource type="Script" path="res://drag.gd" id="3_c67pp"]
-[ext_resource type="Texture2D" uid="uid://cnelo0juqk6p8" path="res://close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="4_i4rkp"]
-[ext_resource type="Texture2D" uid="uid://c4bkt21jffme" path="res://file_open_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="5_245e7"]
-[ext_resource type="Script" path="res://quit_button.gd" id="5_lgp2o"]
-[ext_resource type="Texture2D" uid="uid://k3i1hdntgyaa" path="res://save_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="5_r24jn"]
+[ext_resource type="PackedScene" uid="uid://ymmw6tknayqa" path="res://NaviPanel/navi_panel.tscn" id="3_h72ub"]
 [ext_resource type="Shader" path="res://sketch.gdshader" id="10_08gsg"]
 [ext_resource type="Script" path="res://text_edit.gd" id="10_l5qx4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upy4p"]
+[ext_resource type="Script" path="res://bottom_panel.gd" id="11_l4o27"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_r5wtb"]
 noise_type = 3
@@ -119,15 +113,18 @@ _data = {
 "RESET": SubResource("Animation_dor7q")
 }
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" node_paths=PackedStringArray("text_edit")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 mouse_filter = 2
 script = ExtResource("1_1f0rb")
+text_edit = NodePath("MarginContainer/PanelContainer/VBoxContainer/TextEdit")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -147,64 +144,15 @@ theme = ExtResource("1_5rrya")
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+[node name="NaviPanel" parent="MarginContainer/PanelContainer/VBoxContainer" instance=ExtResource("3_h72ub")]
 layout_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 6
-script = ExtResource("3_c67pp")
 
-[node name="CheckButton" type="CheckButton" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-tooltip_text = "Always on Top?"
-theme = ExtResource("1_5rrya")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-button_pressed = true
-text = " Pin"
-script = ExtResource("3_86pma")
-
-[node name="VSeparator2" type="VSeparator" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_upy4p")
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("1_5rrya")
-text = "测试用例"
-horizontal_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_upy4p")
-
-[node name="LoadButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Load "
-icon = ExtResource("5_245e7")
-
-[node name="SaveButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_5rrya")
-text = "Save "
-icon = ExtResource("5_r24jn")
-
-[node name="QuitButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_5rrya")
-text = "Exit "
-icon = ExtResource("4_i4rkp")
-script = ExtResource("5_lgp2o")
-
-[node name="TextEdit" type="TextEdit" parent="MarginContainer/PanelContainer/VBoxContainer" node_paths=PackedStringArray("target_label")]
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_5rrya")
 scroll_smooth = true
 script = ExtResource("10_l5qx4")
-target_label = NodePath("../HBoxContainer/Label")
 
 [node name="ColorRect" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer/TextEdit"]
 material = SubResource("ShaderMaterial_grgu1")
@@ -218,17 +166,17 @@ mouse_filter = 2
 mouse_default_cursor_shape = 1
 theme = ExtResource("1_5rrya")
 
+[node name="BottomPanel" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 13
+script = ExtResource("11_l4o27")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5apy5")
 }
 
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" to="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" to="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" method="_on_mouse_exited"]
-[connection signal="button_down" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/CheckButton" to="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/CheckButton" method="_on_button_down"]
-[connection signal="button_up" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/CheckButton" to="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/CheckButton" method="_on_button_up"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/QuitButton" to="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/QuitButton" method="_on_pressed"]
 [connection signal="text_changed" from="MarginContainer/PanelContainer/VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
 [connection signal="text_changed" from="MarginContainer/PanelContainer/VBoxContainer/TextEdit" to="MarginContainer/PanelContainer/VBoxContainer/TextEdit" method="_on_text_changed"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/BottomPanel" to="MarginContainer/PanelContainer/VBoxContainer/BottomPanel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/PanelContainer/VBoxContainer/BottomPanel" to="MarginContainer/PanelContainer/VBoxContainer/BottomPanel" method="_on_mouse_exited"]

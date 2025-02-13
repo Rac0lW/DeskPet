@@ -2,10 +2,7 @@ extends Control
 
 @export var offset:int = 40
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var text_edit: TextEdit = $MarginContainer/PanelContainer/VBoxContainer/TextEdit
-
-
-
+@export var text_edit: TextEdit
 @export var hide_start_windows_pos:Vector2i
 @export var hide_end_windows_pos:Vector2i
 

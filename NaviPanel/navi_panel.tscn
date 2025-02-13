@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://ymmw6tknayqa"]
+
+[ext_resource type="Script" path="res://NaviPanel/drag.gd" id="1_8c5ms"]
+[ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://main.tres" id="2_xloel"]
+[ext_resource type="Script" path="res://NaviPanel/check_button.gd" id="3_dfpmy"]
+[ext_resource type="Texture2D" uid="uid://c4bkt21jffme" path="res://file_open_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="4_mim18"]
+[ext_resource type="Texture2D" uid="uid://k3i1hdntgyaa" path="res://save_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="5_fa1pr"]
+[ext_resource type="Texture2D" uid="uid://cnelo0juqk6p8" path="res://close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="6_y71t4"]
+[ext_resource type="Script" path="res://NaviPanel/quit_button.gd" id="7_j30ee"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upy4p"]
+
+[node name="NaviPanel" type="PanelContainer"]
+theme = ExtResource("2_xloel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 6
+script = ExtResource("1_8c5ms")
+
+[node name="CheckButton" type="CheckButton" parent="HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Always on Top?"
+theme = ExtResource("2_xloel")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+button_pressed = true
+text = " Pin"
+script = ExtResource("3_dfpmy")
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_upy4p")
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_xloel")
+text = "测试用例"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_upy4p")
+
+[node name="LoadButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Load "
+icon = ExtResource("4_mim18")
+
+[node name="SaveButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_xloel")
+text = "Save "
+icon = ExtResource("5_fa1pr")
+
+[node name="QuitButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_xloel")
+text = "Exit "
+icon = ExtResource("6_y71t4")
+script = ExtResource("7_j30ee")
+
+[connection signal="mouse_entered" from="HBoxContainer" to="HBoxContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer" to="HBoxContainer" method="_on_mouse_exited"]
+[connection signal="button_down" from="HBoxContainer/CheckButton" to="HBoxContainer/CheckButton" method="_on_button_down"]
+[connection signal="button_up" from="HBoxContainer/CheckButton" to="HBoxContainer/CheckButton" method="_on_button_up"]
+[connection signal="pressed" from="HBoxContainer/QuitButton" to="HBoxContainer/QuitButton" method="_on_pressed"]

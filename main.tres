@@ -16,7 +16,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [resource]
-Button/colors/font_color = Color(0.230469, 0.230469, 0.230469, 1)
+Button/colors/font_color = Color(0.308594, 0.308594, 0.308594, 1)
 Button/colors/icon_normal_color = Color(0.230469, 0.230469, 0.230469, 1)
 Button/styles/hover = ExtResource("1_g8dql")
 Button/styles/normal = ExtResource("1_g8dql")

@@ -1,35 +1,23 @@
-[gd_scene load_steps=13 format=3 uid="uid://dnfcjel1wylsd"]
+[gd_scene load_steps=12 format=3 uid="uid://dnfcjel1wylsd"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1f0rb"]
 [ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://main.tres" id="1_5rrya"]
 [ext_resource type="PackedScene" uid="uid://ymmw6tknayqa" path="res://NaviPanel/navi_panel.tscn" id="3_h72ub"]
-[ext_resource type="Shader" path="res://sketch.gdshader" id="10_08gsg"]
 [ext_resource type="Script" path="res://text_edit.gd" id="10_l5qx4"]
 [ext_resource type="Script" path="res://bottom_panel.gd" id="11_l4o27"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_r5wtb"]
-noise_type = 3
-fractal_type = 2
-fractal_lacunarity = 3.655
-fractal_gain = 2.77
+[sub_resource type="Gradient" id="Gradient_nvnyq"]
+offsets = PackedFloat32Array(0, 0.309406, 0.581683, 0.995049)
+colors = PackedColorArray(0.56, 0.56, 0.56, 0.286275, 0.86, 0.82904, 0.6278, 0.235294, 0.87, 0.83404, 0.6003, 0.341176, 0.964844, 0.888963, 0.395737, 0.431373)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5qtxu"]
-seamless = true
-seamless_blend_skirt = 1.0
-noise = SubResource("FastNoiseLite_r5wtb")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rrnqm"]
+noise_type = 0
+frequency = 0.038
+fractal_gain = 2.04
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_grgu1"]
-shader = ExtResource("10_08gsg")
-shader_parameter/u_bgColor = Color(0.972656, 0.957458, 0, 1)
-shader_parameter/u_bgColorFactor = 0.303
-shader_parameter/u_patternColor = Color(0, 0, 0, 1)
-shader_parameter/u_threshold1 = 0.75
-shader_parameter/u_threshold2 = 0.5
-shader_parameter/u_threshold3 = 0.25
-shader_parameter/u_threshold4 = 0.05
-shader_parameter/u_bgTiling = Vector2(1, 1)
-shader_parameter/u_patternTiling = Vector2(1, 1)
-shader_parameter/u_bgTexture = SubResource("NoiseTexture2D_5qtxu")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_o7fal"]
+color_ramp = SubResource("Gradient_nvnyq")
+noise = SubResource("FastNoiseLite_rrnqm")
 
 [sub_resource type="Animation" id="Animation_2xow7"]
 resource_name = "Init"
@@ -154,17 +142,14 @@ theme = ExtResource("1_5rrya")
 scroll_smooth = true
 script = ExtResource("10_l5qx4")
 
-[node name="ColorRect" type="Panel" parent="MarginContainer/PanelContainer/VBoxContainer/TextEdit"]
-material = SubResource("ShaderMaterial_grgu1")
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/VBoxContainer/TextEdit"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-mouse_default_cursor_shape = 1
-theme = ExtResource("1_5rrya")
+texture = SubResource("NoiseTexture2D_o7fal")
 
 [node name="BottomPanel" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2

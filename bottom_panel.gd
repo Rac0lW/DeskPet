@@ -43,4 +43,3 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	is_entering = false
-	#is_draging = false

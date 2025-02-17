@@ -57,7 +57,8 @@ func boot():
 	first_boot_for_window_pos_set()
 
 func _load_game() -> void:
-	text_edit.text = SaveGame.load_game().text_save
+	if SaveGame.load_game():
+		text_edit.text = SaveGame.load_game().text_save
 	
 func _save_game() -> void:
 	save_manager.text_save = text_edit.text

@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://NaviPanel/drag.gd" id="1_8c5ms"]
 [ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://Main/main.tres" id="2_xloel"]
 [ext_resource type="Script" path="res://NaviPanel/check_button.gd" id="3_dfpmy"]
-[ext_resource type="Texture2D" uid="uid://c4bkt21jffme" path="res://file_open_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="4_mim18"]
-[ext_resource type="Texture2D" uid="uid://k3i1hdntgyaa" path="res://save_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="5_fa1pr"]
-[ext_resource type="Texture2D" uid="uid://cnelo0juqk6p8" path="res://close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="6_y71t4"]
+[ext_resource type="Texture2D" uid="uid://c4bkt21jffme" path="res://Assets/file_open_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="4_mim18"]
+[ext_resource type="Texture2D" uid="uid://k3i1hdntgyaa" path="res://Assets/save_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="5_fa1pr"]
+[ext_resource type="Texture2D" uid="uid://cnelo0juqk6p8" path="res://Assets/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="6_y71t4"]
 [ext_resource type="Script" path="res://NaviPanel/quit_button.gd" id="7_j30ee"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upy4p"]

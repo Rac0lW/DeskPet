@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SaveGame" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://save.gd" id="1_orttd"]
+[ext_resource type="Script" path="res://Save/save.gd" id="1_orttd"]
 
 [resource]
 script = ExtResource("1_orttd")
@@ -32,4 +32,5 @@ text_save = "软件实现目标
 15. scale 边界缺失问题
 16. scale for noisetexture fittings. checked.
 
-17. Export file's saving problem."
+17. Export file's saving problem.
+18. inverted draging to change the size of the software."

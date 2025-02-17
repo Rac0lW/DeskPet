@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://denar2ubrjxtp"
-path="res://.godot/imported/Section 1.svg-d49a51c5fa171a807680c0b123e798ab.ctex"
+uid="uid://dvrcffy1did83"
+path="res://.godot/imported/drag_pan_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg-9673b18865b2223281345b1464dcfca6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Section 1.svg"
-dest_files=["res://.godot/imported/Section 1.svg-d49a51c5fa171a807680c0b123e798ab.ctex"]
+source_file="res://Assets/drag_pan_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+dest_files=["res://.godot/imported/drag_pan_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg-9673b18865b2223281345b1464dcfca6.ctex"]
 
 [params]
 

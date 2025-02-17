@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3225407iin4i"
-path="res://.godot/imported/压纹背景图片-压纹背景素材-压纹背景插画-摄图新视界.jpg-f878738ba0ca097a083324bd85be4b38.ctex"
+uid="uid://cnelo0juqk6p8"
+path="res://.godot/imported/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg-d4aeb4563243f13538efce2dbfdda637.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://压纹背景图片-压纹背景素材-压纹背景插画-摄图新视界.jpg"
-dest_files=["res://.godot/imported/压纹背景图片-压纹背景素材-压纹背景插画-摄图新视界.jpg-f878738ba0ca097a083324bd85be4b38.ctex"]
+source_file="res://Assets/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+dest_files=["res://.godot/imported/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg-d4aeb4563243f13538efce2dbfdda637.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

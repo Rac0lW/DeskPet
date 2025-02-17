@@ -26,7 +26,7 @@ func _ready() -> void:
 	
 
 func boot():
-	var win_pos = DisplayServer.window_get_position()
+	#var win_pos = DisplayServer.window_get_position()
 	var screen_size = DisplayServer.screen_get_size()
 	
 	var right_pos_x = screen_size.x - offset - size.x
@@ -39,8 +39,7 @@ func boot():
 	animation_player.play("Init")
 
 func _load_game() -> void:
-	var save = save_manager.load_game()
-	text_edit.text = save.text_save
+	text_edit.text = SaveGame.load_game().text_save
 	
 func _save_game() -> void:
 	save_manager.text_save = text_edit.text

@@ -16,6 +16,7 @@ frequency = 0.038
 fractal_gain = 2.04
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_o7fal"]
+seamless = true
 color_ramp = SubResource("Gradient_nvnyq")
 noise = SubResource("FastNoiseLite_rrnqm")
 
@@ -150,6 +151,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("NoiseTexture2D_o7fal")
+stretch_mode = 1
 
 [node name="BottomPanel" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2

@@ -13,10 +13,12 @@ text_save = "软件实现目标
 
 5. 字体显示Bug/ 与字体更新
 6. 样式自定义
-7. I-Beam明显化
+7. I-Beam明显化 checked
 
 7. md特化
 8. 工具箱子系统(navi和button)
+	8.1 一键清空
+	8.2
 
 
 9.系统界面自适应(Rust调用API)
@@ -25,4 +27,7 @@ text_save = "软件实现目标
 11. 纸面特性 checked
 12. 优化或去除右键菜单
 
-13. 标题应该显示为有内容行数的第一个"
+13. 标题应该显示为有内容行数的第一个
+14. 流畅性问题 checked
+15. scale 边界缺失问题
+16. scale for noisetexture fittings."

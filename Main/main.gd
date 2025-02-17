@@ -22,15 +22,19 @@ func _input(event: InputEvent) -> void:
 		_save_game()
 	
 	if event.is_action_pressed("Hide"):
-		if Setting.is_hiding == false:
-			Setting.is_hiding = true
+		if Setting.current_window_state != Setting.WindowStates.Hiding:
+			Setting.current_window_state = Setting.WindowStates.Hiding
 			_start_hiding()
-		else:
-			Setting.is_hiding = false
-			_cancel()
 
 	if event.is_action_pressed("Peak"):
-		_peaking()
+		if Setting.current_window_state != Setting.WindowStates.Peaking:
+			Setting.current_window_state = Setting.WindowStates.Peaking
+			_peaking()
+			
+	if event.is_action_pressed("Normal"):
+		if Setting.current_window_state != Setting.WindowStates.Normal:
+			Setting.current_window_state = Setting.WindowStates.Normal
+			_cancel()
 
 func _ready() -> void:
 	boot()

@@ -21,7 +21,6 @@ script = ExtResource("1_8c5ms")
 
 [node name="CheckButton" type="CheckButton" parent="HBoxContainer"]
 layout_mode = 2
-tooltip_text = "Always on Top?"
 theme = ExtResource("2_xloel")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
@@ -40,6 +39,7 @@ size_flags_horizontal = 3
 theme = ExtResource("2_xloel")
 text = "测试用例"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 layout_mode = 2

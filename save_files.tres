@@ -30,4 +30,6 @@ text_save = "软件实现目标
 13. 标题应该显示为有内容行数的第一个
 14. 流畅性问题 checked
 15. scale 边界缺失问题
-16. scale for noisetexture fittings."
+16. scale for noisetexture fittings. checked.
+
+17. Export file's saving problem."

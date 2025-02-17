@@ -114,6 +114,7 @@ size_flags_vertical = 3
 mouse_filter = 2
 script = ExtResource("1_1f0rb")
 text_edit = NodePath("MarginContainer/PanelContainer/VBoxContainer/TextEdit")
+animation_speed = 0.2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -169,6 +170,8 @@ script = ExtResource("11_l4o27")
 libraries = {
 "": SubResource("AnimationLibrary_5apy5")
 }
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="text_changed" from="MarginContainer/PanelContainer/VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
 [connection signal="text_changed" from="MarginContainer/PanelContainer/VBoxContainer/TextEdit" to="MarginContainer/PanelContainer/VBoxContainer/TextEdit" method="_on_text_changed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnfcjel1wylsd"]
+[gd_scene load_steps=14 format=3 uid="uid://dnfcjel1wylsd"]
 
 [ext_resource type="Script" path="res://Main/main.gd" id="1_1f0rb"]
 [ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://Main/main.tres" id="1_5rrya"]
 [ext_resource type="PackedScene" uid="uid://ymmw6tknayqa" path="res://NaviPanel/navi_panel.tscn" id="3_h72ub"]
+[ext_resource type="Script" path="res://Main/peak_panel.gd" id="6_24x2f"]
 [ext_resource type="Script" path="res://TextEditer/text_edit.gd" id="10_l5qx4"]
 [ext_resource type="Script" path="res://BottomPanel/bottom_panel.gd" id="11_l4o27"]
 
@@ -102,6 +103,12 @@ _data = {
 "RESET": SubResource("Animation_dor7q")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y2vw"]
+bg_color = Color(1, 1, 1, 1)
+border_width_top = 16
+border_color = Color(0.960938, 0.781495, 0.168915, 1)
+corner_radius_top_left = 8
+
 [node name="Main" type="Control" node_paths=PackedStringArray("text_edit")]
 layout_mode = 3
 anchors_preset = 15
@@ -170,10 +177,33 @@ script = ExtResource("11_l4o27")
 libraries = {
 "": SubResource("AnimationLibrary_5apy5")
 }
+autoplay = "RESET"
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="PeakPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -408.0
+offset_bottom = -408.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1y2vw")
+script = ExtResource("6_24x2f")
+
+[node name="BigTimer" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="text_changed" from="MarginContainer/PanelContainer/VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
 [connection signal="text_changed" from="MarginContainer/PanelContainer/VBoxContainer/TextEdit" to="MarginContainer/PanelContainer/VBoxContainer/TextEdit" method="_on_text_changed"]
 [connection signal="mouse_entered" from="MarginContainer/PanelContainer/VBoxContainer/BottomPanel" to="MarginContainer/PanelContainer/VBoxContainer/BottomPanel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/PanelContainer/VBoxContainer/BottomPanel" to="MarginContainer/PanelContainer/VBoxContainer/BottomPanel" method="_on_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="PeakPanel" to="." method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="PeakPanel" to="." method="_on_panel_mouse_exited"]
+[connection signal="timeout" from="BigTimer" to="." method="_on_big_timer_timeout"]

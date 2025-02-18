@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://xyrkwtyqo6c6"]
+[gd_scene load_steps=4 format=3 uid="uid://xyrkwtyqo6c6"]
 
 [ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://Main/main.tres" id="1_0u5qw"]
+[ext_resource type="PackedScene" uid="uid://h1selssbljbl" path="res://ToolPanel/SettingPanel/setting_panel.tscn" id="2_su05f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4vkt"]
 
@@ -36,3 +37,6 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_f4vkt")
 [node name="Button5" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Settings"
+
+[node name="SettingPanel" parent="." instance=ExtResource("2_su05f")]
+layout_mode = 2

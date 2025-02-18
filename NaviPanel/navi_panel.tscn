@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ymmw6tknayqa"]
+[gd_scene load_steps=10 format=3 uid="uid://ymmw6tknayqa"]
 
 [ext_resource type="Script" path="res://NaviPanel/drag.gd" id="1_8c5ms"]
 [ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://Main/main.tres" id="2_xloel"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://k3i1hdntgyaa" path="res://Assets/save_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="5_fa1pr"]
 [ext_resource type="Texture2D" uid="uid://cnelo0juqk6p8" path="res://Assets/close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" id="6_y71t4"]
 [ext_resource type="Script" path="res://NaviPanel/quit_button.gd" id="7_j30ee"]
+[ext_resource type="PackedScene" uid="uid://xyrkwtyqo6c6" path="res://ToolPanel/tool_panel.tscn" id="8_ieyeb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upy4p"]
 
@@ -63,6 +64,10 @@ theme = ExtResource("2_xloel")
 text = "Exit "
 icon = ExtResource("6_y71t4")
 script = ExtResource("7_j30ee")
+
+[node name="ToolPanel" parent="." instance=ExtResource("8_ieyeb")]
+visible = false
+layout_mode = 2
 
 [connection signal="mouse_entered" from="HBoxContainer" to="HBoxContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="HBoxContainer" to="HBoxContainer" method="_on_mouse_exited"]

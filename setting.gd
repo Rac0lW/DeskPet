@@ -6,6 +6,8 @@ enum WindowStates{
 	Peaking
 }
 
+var isLocking:bool = false
+
 var is_running_hiding_animation: bool = false
 var current_window_state = WindowStates.Normal
 

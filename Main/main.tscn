@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://dnfcjel1wylsd"]
 
-[ext_resource type="Script" path="res://Main/main.gd" id="1_1f0rb"]
+[ext_resource type="Script" uid="uid://di86l8d3j3ugx" path="res://Main/main.gd" id="1_1f0rb"]
 [ext_resource type="Theme" uid="uid://kwav5ecavs0r" path="res://Main/main.tres" id="1_5rrya"]
 [ext_resource type="PackedScene" uid="uid://ymmw6tknayqa" path="res://NaviPanel/navi_panel.tscn" id="3_h72ub"]
-[ext_resource type="Script" path="res://Main/peak_panel.gd" id="6_24x2f"]
-[ext_resource type="Script" path="res://TextEditer/text_edit.gd" id="10_l5qx4"]
-[ext_resource type="Script" path="res://BottomPanel/bottom_panel.gd" id="11_l4o27"]
+[ext_resource type="Script" uid="uid://cj4g0pc4fnh17" path="res://Main/peak_panel.gd" id="6_24x2f"]
+[ext_resource type="Script" uid="uid://bb8ewlyr5qlaf" path="res://TextEditer/text_edit.gd" id="10_l5qx4"]
+[ext_resource type="Script" uid="uid://b34uyqeaom66v" path="res://BottomPanel/bottom_panel.gd" id="11_l4o27"]
 
 [sub_resource type="Gradient" id="Gradient_nvnyq"]
 offsets = PackedFloat32Array(0, 0.309406, 0.581683, 0.995049)
@@ -99,8 +99,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5apy5"]
 _data = {
-"Init": SubResource("Animation_2xow7"),
-"RESET": SubResource("Animation_dor7q")
+&"Init": SubResource("Animation_2xow7"),
+&"RESET": SubResource("Animation_dor7q")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y2vw"]
@@ -175,7 +175,7 @@ script = ExtResource("11_l4o27")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_5apy5")
+&"": SubResource("AnimationLibrary_5apy5")
 }
 autoplay = "RESET"
 

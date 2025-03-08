@@ -66,6 +66,9 @@ func _process(delta: float) -> void:
 		DisplayServer.window_set_position(current_window_pos)
 		
 	if !DisplayServer.window_is_focused():
+		if Setting.isLocking:
+			return
+		
 		if big_timer.is_stopped():
 			big_timer.start()
 #-------------------------------------------------------------------------------
